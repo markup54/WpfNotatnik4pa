@@ -11,5 +11,6 @@
             TextWrapping="Wrap">
             Autorem aplikacji jest klasa 4P, itd
         </TextBlock>
+        <Image Source="droga.jpg"/>
     </StackPanel>
 </Window>

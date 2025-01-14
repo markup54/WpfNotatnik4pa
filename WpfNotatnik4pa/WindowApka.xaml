@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfNotatnik4pa"
         mc:Ignorable="d"
-        Title="WindowApka" Height="450" Width="800">
+        Title="WindowApka" Height="250" Width="200">
     <Grid>
-        
+        <TextBlock
+            TextWrapping="Wrap"
+            >
+            Aplikacje jest notatnikiem z możliwością zapisu w pliku oraz 
+            wyświetlenia zawartości innego pliku.
+        </TextBlock>
     </Grid>
 </Window>

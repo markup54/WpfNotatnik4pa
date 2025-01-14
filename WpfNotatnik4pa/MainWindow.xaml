@@ -10,23 +10,41 @@
         <ToolBar DockPanel.Dock="Top"></ToolBar>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Plik">
-                <MenuItem Header="Nowy/Wyczyść"/>
+                <MenuItem 
+                    Header="Nowy/Wyczyść"
+                    Click="MenuItem_Click_Nowy"
+                    />
                 <MenuItem Header="Nowe okno"/>
                 <MenuItem Header="Nowa karta"/>
                 <MenuItem Header="Otwórz"/>
                 <MenuItem Header="Otwórz w nowym oknie"/>
                 <Separator/>
-                <MenuItem Header="Zapisz"/>
-                <MenuItem Header="Zapisz jako"/>
+                <MenuItem 
+                    Header="Zapisz"
+                    Click="MenuItem_Click_zapisz"
+                    />
+                <MenuItem 
+                    Header="Zapisz jako"
+                    Click="MenuItem_Click_Zapisz_Jako"
+                    />
                 <Separator/>
                 <MenuItem Header="Zakończ"/>
 
             </MenuItem>
-            <MenuItem Header="Edycja"></MenuItem>
+            <MenuItem Header="Edycja">
+                <MenuItem Header="Kopiuj"
+                          Command="ApplicationCommands.Copy"/>
+            </MenuItem>
             <MenuItem Header="Formatowanie"></MenuItem>
             <MenuItem Header="Informacje">
-                <MenuItem Header="Informacje o autorze"></MenuItem>
-                <MenuItem Header="Informacje o aplikacji"></MenuItem>
+                <MenuItem 
+                    Header="Informacje o autorze"
+                    Click="MenuItem_Click_Info_Autor"
+                    ></MenuItem>
+                <MenuItem 
+                    Header="Informacje o aplikacji"
+                    Click="MenuItem_Click_Info_Apka"
+                    ></MenuItem>
             </MenuItem>
         </Menu>
         <Label 
