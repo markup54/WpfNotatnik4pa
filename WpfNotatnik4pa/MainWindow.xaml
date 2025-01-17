@@ -16,7 +16,9 @@
                     />
                 <MenuItem Header="Nowe okno"/>
                 <MenuItem Header="Nowa karta"/>
-                <MenuItem Header="Otwórz"/>
+                <MenuItem Header="Otwórz"
+                          Click="MenuItem_Click_Otworz"
+                          />
                 <MenuItem Header="Otwórz w nowym oknie"/>
                 <Separator/>
                 <MenuItem 
@@ -31,11 +33,37 @@
                 <MenuItem Header="Zakończ"/>
 
             </MenuItem>
-            <MenuItem Header="Edycja">
+            <MenuItem Header="E_dycja">
                 <MenuItem Header="Kopiuj"
                           Command="ApplicationCommands.Copy"/>
+                <MenuItem Header="Wytnij"
+                          Command="ApplicationCommands.Cut"/>
+                <MenuItem Header="Wklej"
+                          Command="ApplicationCommands.Paste"/>
+                <MenuItem Header="Cofnij"
+                          Command="ApplicationCommands.Undo"/>
             </MenuItem>
-            <MenuItem Header="Formatowanie"></MenuItem>
+            <MenuItem Header="Formatowanie">
+                <MenuItem Header="Rozmiar czcionki">
+                    <MenuItem Header="++"/>
+                    <MenuItem Header="--"/>
+                </MenuItem>
+                <MenuItem Header="Dzień/Noc" IsCheckable="True"
+                          IsChecked="True"
+                          ></MenuItem>
+                <MenuItem Header="_Kolor czcionki">
+                    <MenuItem Header="domyślny" Click="MenuItem_Click_Kolor_czcionki"/>
+                    <MenuItem Header="czerwony" Click="MenuItem_Click_Kolor_czcionki"/>
+                    <MenuItem Header="zielony" Click="MenuItem_Click_Kolor_czcionki"/>
+                    <MenuItem Header="dowolny" Click="MenuItem_ClickDowolnyKolor"/>
+                    
+                </MenuItem>
+                <MenuItem Header="K_olor tła">
+                    
+                </MenuItem>
+                
+                
+            </MenuItem>
             <MenuItem Header="Informacje">
                 <MenuItem 
                     Header="Informacje o autorze"

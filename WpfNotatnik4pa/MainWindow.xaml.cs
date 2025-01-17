@@ -121,5 +121,55 @@ namespace WpfNotatnik4pa
             NazwaPliku = "";
             Title = "Notatnik";
         }
+
+        private void MenuItem_Click_Otworz(object sender, RoutedEventArgs e)
+        {
+            //czy zapisać najpierw stary plik
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            //filtr żeby pliki tekstowe
+            openFileDialog.Filter = "plik tekstowy | *.txt";
+            //jeżeli zostało otwarte okno dialogowe do otwierania pliku to zapisać jaki plik otwarto
+            //i wyświetlić zawartość w textbox
+
+           if( openFileDialog.ShowDialog()==true )
+            {
+                NazwaPliku=openFileDialog.FileName;
+                Title = openFileDialog.FileName;
+                textbox_wpisanytekst.Text=File.ReadAllText(NazwaPliku);
+            }
+
+        }
+
+        private void MenuItem_Click_Kolor_czcionki(object sender, RoutedEventArgs e)
+        {
+            MenuItem menuItem = sender as MenuItem;
+            //(MenuItem) sender
+            string kolor = menuItem.Header.ToString();
+            switch (kolor)
+            {
+                case "czerwony":
+                    textbox_wpisanytekst.Foreground = Brushes.Red;
+                    break;
+                case "zielony":
+                    textbox_wpisanytekst.Foreground= Brushes.Green;
+                    break;
+                default:
+                    textbox_wpisanytekst.Foreground = Brushes.Black; 
+                    break;
+            }
+        }
+
+        private void MenuItem_ClickDowolnyKolor(object sender, RoutedEventArgs e)
+        {
+            //otwórz nowe okno 
+            //wybierz jakiś kolor
+            //zatwierdz i ma się zmienic kolor czcionki
+            Window1 nowe = new Window1();
+           // textbox_wpisanytekst.Text = nowe.Wartosc;
+            nowe.ShowDialog();
+            
+               textbox_wpisanytekst.Text = nowe.Wartosc;
+            
+        }
     }
 }
